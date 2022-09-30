@@ -1,0 +1,105 @@
+<!--
+    
+    MIT License
+
+Copyright (c) 2022 DanKe
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+-->
+
+<script> 
+    function createIframe() {
+    var i = document.createElement("iframe");
+        frameborder="no";
+        framespacing="0";
+        i.scrolling="no";
+        i.allow="autoplay;encrypted-media";
+        i.allowfullscreen="true";
+        document.getElementById("div-that-holds-the-iframe").appendChild(i);
+    };
+     //兼容性处理
+     if (window.addEventListener) window.addEventListener("load", createIframe, false);
+     else if (window.attachEvent) window.attachEvent("onload", createIframe);
+     else window.onload = createIframe;
+</script>
+
+
+<script>
+    function change(){    
+            var roomid = document.getElementsByName("zhubo")[0].value
+            document.getElementById("iframe").src='https://www.bilibili.com/blackboard/live/live-activity-player.html?cid=' +roomid+"&quality=0"
+            document.getElementById("now").value="当前直播间号："+ roomid
+            if(document.getElementsByName("zhubo")[0].value == "null")
+            {
+                document.getElementById("now").value="您未选择直播间"
+                $("#close").hide();
+            }
+            else
+            {
+                $("#close").show();
+            }
+    }
+    function close(){
+        document.getElementById("iframe").src=""
+        document.getElementById("now").value="您未选择直播间"
+        $("#close").hide();
+    }
+</script>
+
+<body style="background-color:rgba(0, 0, 0, 0);"></body>
+<div>
+    <iframe id="iframe" style="width: 475px;height: 270px;" src=""></iframe>
+    <div>
+        <select name="zhubo" id="zhubo" onchange="change()">
+            <!--
+                这里是蛋壳爱看的虚拟主播，你可以根据你的爱好自行修改
+                格式：
+                <option value="直播间号">主播名称</option>
+            -->
+            <option value="null">请选择直播间</option>
+            <option value="21402309">眞白花音_Official</option>
+            <option value="22700040">露珀塔_Ruperta</option>
+            <option value="22758221">夏川玥玥Official</option>
+            <option value="364027">彩虹酱哇</option>
+            <option value="24833274">凤小七seven</option>
+            <option value="9162799">九重紫Official</option>
+            <option value="24485048">晨悠光</option>
+            <option value="22334596">阳阳不想熬夜</option>
+            <option value="23472646">小鸟游杏子Official</option>
+            <option value="88615">奈姬niki</option>
+            <option value="9395707">榛葉nami</option>
+            <option value="22880700">星野怜Official</option>
+            <option value="24492970">鹿卡上学不迟到</option>
+            <option value="24393">雪狐桑</option>
+            <option value="10346218">沁柠Official</option>
+            <option value="22301377">奈奈莉娅Channel</option>
+            <option value="23256987">陆鳐lulu</option>
+            <option value="42270">白桃Shirako</option>
+            <option value="22715167">布丁酱Official</option>
+            <option value="6632844">孙有劲Sunyeojin</option>
+            <option value="21712406">AIChannel中国绊爱</option>
+            <option value="4788550">胡桃Usa</option>
+            <option value="41682">早稻叽</option>
+            <option value="4138602">小希小桃Channel</option>
+        </select>
+        <input type="text" id="now" value="您未选择直播间" readonly="true"> 
+
+    </div>
+</div>
