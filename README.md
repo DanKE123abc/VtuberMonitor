@@ -2,7 +2,7 @@
 
 ### **这是一个很渣很渣很渣的项目，纯粹是为了方便自己看虚拟主播**
 
-![示例图片](.\example.png)本网站为静态网站，无需配置，开箱即用！
+![示例图片](https://raw.githubusercontent.com/DanKE123abc/VtuberMonitoring/main/example.png)本网站为静态网站，无需配置，开箱即用！
 
 使用<iframe>标签转接bilibili直播，估计不懂编程的同学也看得懂
 
