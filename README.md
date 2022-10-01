@@ -1,4 +1,4 @@
-# MonitoringRoom
+# VtuberMonitor
 
 ### **这是一个很渣很渣很渣的项目，纯粹是为了方便自己看虚拟主播**
 
