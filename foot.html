@@ -44,22 +44,25 @@ SOFTWARE.
 <script>
     function change(){    
             var roomid = document.getElementsByName("zhubo")[0].value
-            document.getElementById("iframe").src='https://www.bilibili.com/blackboard/live/live-activity-player.html?cid=' +roomid+"&quality=0"
+            document.getElementById("iframe").src='https://www.bilibili.com/blackboard/live/live-activity-player.html?cid=' +roomid+"&quality=1"
             document.getElementById("now").value="当前直播间号："+ roomid
             if(document.getElementsByName("zhubo")[0].value == "null")
             {
                 document.getElementById("now").value="您未选择直播间"
-                $("#close").hide();
             }
-            else
+            else if(document.getElementsByName("zhubo")[0].value == "custom")
             {
-                $("#close").show();
+                document.getElementById("now").value="您未选择直播间"
+                Custom()
             }
     }
-    function close(){
-        document.getElementById("iframe").src=""
-        document.getElementById("now").value="您未选择直播间"
-        $("#close").hide();
+    function Custom(){
+        var x;
+        var roomid=prompt("没有想看的主播？输入直播间号吧！","请输入B站直播间号");
+        if (roomid!=null && roomid!=""){
+            document.getElementById("iframe").src='https://www.bilibili.com/blackboard/live/live-activity-player.html?cid=' +roomid+"&quality=1"
+            document.getElementById("now").value="当前直播间号："+ roomid
+        }
     }
 </script>
 
@@ -68,36 +71,41 @@ SOFTWARE.
     <iframe id="iframe" style="width: 475px;height: 270px;" src=""></iframe>
     <div>
         <select name="zhubo" id="zhubo" onchange="change()">
-            <!--
-                这里是蛋壳爱看的虚拟主播，你可以根据你的爱好自行修改
-                格式：
-                <option value="直播间号">主播名称</option>
-            -->
             <option value="null">请选择直播间</option>
-            <option value="21402309">眞白花音_Official</option>
-            <option value="22700040">露珀塔_Ruperta</option>
-            <option value="22758221">夏川玥玥Official</option>
-            <option value="364027">彩虹酱哇</option>
-            <option value="24833274">凤小七seven</option>
-            <option value="9162799">九重紫Official</option>
-            <option value="24485048">晨悠光</option>
-            <option value="22334596">阳阳不想熬夜</option>
-            <option value="23472646">小鸟游杏子Official</option>
-            <option value="88615">奈姬niki</option>
-            <option value="9395707">榛葉nami</option>
-            <option value="22880700">星野怜Official</option>
-            <option value="24492970">鹿卡上学不迟到</option>
-            <option value="24393">雪狐桑</option>
-            <option value="10346218">沁柠Official</option>
-            <option value="22301377">奈奈莉娅Channel</option>
-            <option value="23256987">陆鳐lulu</option>
-            <option value="42270">白桃Shirako</option>
-            <option value="22715167">布丁酱Official</option>
-            <option value="6632844">孙有劲Sunyeojin</option>
-            <option value="21712406">AIChannel中国绊爱</option>
-            <option value="4788550">胡桃Usa</option>
             <option value="41682">早稻叽</option>
+            <option value="24393">雪狐桑</option>
+            <option value="24485048">晨悠光</option>
+            <option value="876396">冰糖IO</option>
+            <option value="364027">彩虹酱哇</option>
+            <option value="4788550">胡桃Usa</option>
+            <option value="88615">奈姬niki</option>
+            <option value="392523">多多poi、</option>
+            <option value="9395707">榛葉nami</option>
+            <option value="23256987">陆鳐lulu</option>
+            <option value="21514463">七濑Unia</option>
+            <option value="7953876">宴宁ccccc</option>
+            <option value="22700040">露珀塔_Ruperta</option>
+            <option value="23149132">花云凛_propro</option>
+            <option value="42270">白桃Shirako</option>
+            <option value="24833274">凤小七seven</option>
+            <option value="22650610">冥冥meichan</option>
+            <option value="9162799">九重紫Official</option>
+            <option value="22334596">阳阳不想熬夜</option>
+            <option value="22880700">星野怜Official</option>
+            <option value="22816111">東雪蓮Official</option>
+            <option value="24492970">鹿卡上学不迟到</option>
+            <option value="10346218">沁柠Official</option>
+            <option value="5384467">溪淽Official_</option>
+            <option value="25390382">苏奈Mio_Official</option>
+            <option value="22301377">奈奈莉娅Channel</option>
+            <option value="21402309">眞白花音_Official</option>
+            <option value="22715167">布丁酱Official</option>
             <option value="4138602">小希小桃Channel</option>
+            <option value="6632844">孙有劲Sunyeojin</option>
+            <option value="22758221">夏川玥玥Official</option>
+            <option value="21712406">AIChannel中国绊爱</option>
+            <option value="23472646">小鸟游杏子Official</option>
+            <option value="custom">自定义直播间</option>
         </select>
         <input type="text" id="now" value="您未选择直播间" readonly="true"> 
 
