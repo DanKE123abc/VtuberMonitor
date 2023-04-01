@@ -26,40 +26,61 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 -->
+
 <head>
     <title>VtuberMonitor</title>
     <meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/x-icon" href="./icon.jpg">
-</head>
-<body style="background-color:rgb(0, 0, 0);"></body>
-<div>
-    <!--
-        主页机位
-    -->
-    <iframe style="width: 490px;height: 305px;" src="foot.html" scrolling="no" allow="autoplay;encrypted-media" allowfullscreen="true"></iframe>
-    <iframe style="width: 490px;height: 305px;" src="foot.html" scrolling="no" allow="autoplay;encrypted-media" allowfullscreen="true"></iframe>
-    <iframe style="width: 490px;height: 305px;" src="foot.html" scrolling="no" allow="autoplay;encrypted-media" allowfullscreen="true"></iframe>
-    <iframe style="width: 490px;height: 305px;" src="foot.html" scrolling="no" allow="autoplay;encrypted-media" allowfullscreen="true"></iframe>
-    <iframe style="width: 490px;height: 305px;" src="foot.html" scrolling="no" allow="autoplay;encrypted-media" allowfullscreen="true"></iframe>
-    <iframe style="width: 490px;height: 305px;" src="foot.html" scrolling="no" allow="autoplay;encrypted-media" allowfullscreen="true"></iframe>
-    <iframe style="width: 490px;height: 305px;" src="foot.html" scrolling="no" allow="autoplay;encrypted-media" allowfullscreen="true"></iframe>
-    <iframe style="width: 490px;height: 305px;" src="foot.html" scrolling="no" allow="autoplay;encrypted-media" allowfullscreen="true"></iframe>
-    <iframe style="width: 490px;height: 305px;" src="foot.html" scrolling="no" allow="autoplay;encrypted-media" allowfullscreen="true"></iframe>
-    <iframe style="width: 490px;height: 305px;" src="foot.html" scrolling="no" allow="autoplay;encrypted-media" allowfullscreen="true"></iframe>
-    <iframe style="width: 490px;height: 305px;" src="foot.html" scrolling="no" allow="autoplay;encrypted-media" allowfullscreen="true"></iframe>
-    <iframe style="width: 490px;height: 305px;" src="foot.html" scrolling="no" allow="autoplay;encrypted-media" allowfullscreen="true"></iframe>
-</div>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="./icon.jpg">
+    <link rel="stylesheet" href="grid-container.css">
+    <script type="text/javascript">
+        // 检测用户代理字符串是否含有手机浏览器关键字
+        function isMobile() {
+            return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+        }
 
+        // 页面加载完成后执行判断并跳转
+        window.onload = function () {
+            if (isMobile()) {
+                window.location.href = "./classics.html";
+            }
+        }
+    </script>
+</head>
+
+<body style="background-color:rgb(0, 0, 0);">
+</body>
+
+
+<div class="grid-container">
+    <iframe scrolling="no" src="foot.html"></iframe>
+    <iframe scrolling="no" src="foot.html"></iframe>
+    <iframe scrolling="no" src="foot.html"></iframe>
+    <iframe scrolling="no" src="foot.html"></iframe>
+    <iframe scrolling="no" src="foot.html"></iframe>
+    <iframe scrolling="no" src="foot.html"></iframe>
+    <iframe scrolling="no" src="foot.html"></iframe>
+    <iframe scrolling="no" src="foot.html"></iframe>
+    <iframe scrolling="no" src="foot.html"></iframe>
+    <iframe scrolling="no" src="foot.html"></iframe>
+    <iframe scrolling="no" src="foot.html"></iframe>
+    <iframe scrolling="no" src="foot.html"></iframe>
+</div>
 
 <div class="container">
-    <p align="center"><font size="3" color="white">—— VtuberMonitor 虚拟主播监控室 ——</font</p>
-    <p align="center"><font size="1" color="white">该项目已开源，遵循MIT开源协议<a href="https://github.com/DanKE123abc/VtuberMonitor">  GitHub  </a></font</p> 
-    <p align="center"><font size="1" color="white">Copyright©2022 DanKe All Rights Reserved</font</p>
+    <p align="center">
+        <font size="1" color="white"><a href="./classics.html">
+                [ 经典模式 ]</a></font>
+    </p>
+    <p align="center">
+        <font size="3" color="white">—— VtuberMonitor 虚拟主播监控室 ——</font>
+    </p>
+    <p align="center">
+        <font size="1" color="white">该项目已开源，遵循MIT开源协议<a href="https://github.com/DanKE123abc/VtuberMonitor">
+                GitHub </a></font>
+    </p>
+    <p align="center">
+        <font size="1" color="white">Copyright©2022 DanKe All Rights Reserved</font>
+    </p>
 </div>
-
-
-
-
-
